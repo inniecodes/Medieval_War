@@ -1,5 +1,6 @@
+# Medieval War Simulator
+![Battle of Agincourt (1415)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Schlacht_von_Azincourt.jpg/1920px-Schlacht_von_Azincourt.jpg)
 
-# Medieval_War
 
 After watching *Game of Thrones*, I got really interested in Medieval War. I had to study OOP in Java and why not creating a system which the goal is to handle a medieval army?
 
