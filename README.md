@@ -2,9 +2,9 @@
 ![Battle of Agincourt (1415)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Schlacht_von_Azincourt.jpg/1920px-Schlacht_von_Azincourt.jpg)
 
 
-After watching *Game of Thrones*, I got really interested in Medieval War. I had to study OOP in Java and why not creating a system which the goal is to handle a medieval army?
+After watching *Game of Thrones*, I got really interested in Medieval War. I had to study OOP in Java and why not creating a system.Army which the goal is to handle a medieval army?
 
-But first, let's get into medieval war so you can understand how the system works.
+But first, let's get into medieval war so you can understand how the system.Army works.
 
 ## Medieval War: how it actually happened (generally speaking)
 
@@ -29,7 +29,7 @@ Thinking about running away because you are definitely dying? Well, that’s not
 
 Having this in mind will help us understand what we need to do.
 
-## And finally...the system.
+## And finally...the system.Army.
 
 ### Goal
 Imagine a king has hired you as their commander. Your job is to create an efficient army with different types of units, simulate possible battles against enemies generated randomly, and report the result.
@@ -38,18 +38,18 @@ Imagine a king has hired you as their commander. Your job is to create an effici
 
 ## Classes:
 
-**Unit** – abstract class. Attributes: name (String), health (int), attackPower (int). Abstract method: `battleCry()`, where each type will scream something different when entering the combat field.
+**model.model** – abstract class. Attributes: name (String), health (int), attackPower (int). Abstract method: `battleCry()`, where each type will scream something different when entering the combat field.
 
-**Knight, Archer, Catapult** – subclasses of Unit, each with their own extra attribute:
+**model.Knight, model.Archer, model.Catapult** – subclasses of model.model, each with their own extra attribute:
 
-* Knight → armorRating (int) — reduces received damage
-* Archer → range (String: "short" / "long") — defines if it can attack before contact
-* Catapult → reloadTime (int) — attacks every N turns
+* model.Knight → armorRating (int) — reduces received damage
+* model.Archer → range (String: "short" / "long") — defines if it can attack before contact
+* model.Catapult → reloadTime (int) — attacks every N turns
 
-**Army** – handles an ArrayList<Unit>. Represents your army and your enemy.
+**system.Army.Army** – handles an ArrayList<model.model>. Represents your army and your enemy.
 
 **BattleSimulator** – class that executes the battle between two armies. Contains the method:
-`simulate(Army attacker, Army defender)`
+`simulate(system.Army.Army attacker, system.Army.Army defender)`
 
 ---
 
@@ -57,7 +57,7 @@ Imagine a king has hired you as their commander. Your job is to create an effici
 
 This is the menu, and you will be able to:
 
-* Recruit unit (Knight, Archer or Catapult)
+* Recruit unit (model.Knight, model.Archer or model.Catapult)
 * View current army (list all units with stats and battleCry())
 * Simulate battle — generates a random enemy army and resolves turn by turn
 * View battle history (wins / losses)
@@ -68,26 +68,26 @@ This is the menu, and you will be able to:
 ## Rules
 
 * Each turn, a random attacking unit attacks a random defending unit
-* Damage = attackPower of attacker minus armorRating of defender (if Knight); minimum 1
+* Damage = attackPower of attacker minus armorRating of defender (if model.Knight); minimum 1
 * Units with health <= 0 are removed from the ArrayList
 * Battle ends when one side has no units left
-* Catapult only attacks when `turn % reloadTime == 0`
-* Archer with range = "long" attacks first on turn 1 (before contact)
+* model.Catapult only attacks when `turn % reloadTime == 0`
+* model.Archer with range = "long" attacks first on turn 1 (before contact)
 
 ---
 
 ## Technical requirements (OOP review)
 
 * **Encapsulation**: attributes private, getters required
-* **Inheritance**: Knight, Archer, Catapult extend Unit and call `super()` in constructor
-* **Polymorphism**: iterate over ArrayList<Unit> and call `battleCry()` without checking type
-* **Overloading**: method `recruit` in Army with two signatures — one receives a Unit, another receives List<Unit>
+* **Inheritance**: model.Knight, model.Archer, model.Catapult extend model.model and call `super()` in constructor
+* **Polymorphism**: iterate over ArrayList<model.model> and call `battleCry()` without checking type
+* **Overloading**: method `recruit` in system.Army.Army with two signatures — one receives a model.model, another receives List<model.model>
 * **@Override**: battleCry() implemented in each subclass
 
 ---
 
 ## Enemy army
 
-The generation of the enemy army is still in development hehe. I am thinking whether the BattleSimulator will be a separate class or a method inside the Army class.
+The generation of the enemy army is still in development hehe. I am thinking whether the BattleSimulator will be a separate class or a method inside the system.Army.Army class.
 
 ---
