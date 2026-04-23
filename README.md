@@ -2,7 +2,7 @@
 ![Battle of Agincourt (1415)](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Schlacht_von_Azincourt.jpg/1920px-Schlacht_von_Azincourt.jpg)
 
 
-After watching *Game of Thrones*, I got really interested in Medieval War. I had to study OOP in Java and why not creating a system.Army which the goal is to handle a medieval army?
+After watching *Game of Thrones*, I got really interested in Medieval War. Since I had to study OOP in Java, I thought: why not create a system where the goal is to manage a medieval army?
 
 But first, let's get into medieval war so you can understand how the system.Army works.
 
